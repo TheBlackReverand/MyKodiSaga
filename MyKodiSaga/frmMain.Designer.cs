@@ -32,32 +32,32 @@
             this.lblChoixBase = new System.Windows.Forms.Label();
             this.cmdConnecterEtScanner = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.gpbGestionSaga = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNomNouvelleSaga = new System.Windows.Forms.Label();
-            this.txtNomNouvelleSaga = new System.Windows.Forms.TextBox();
-            this.cmdCreerSaga = new System.Windows.Forms.Button();
-            this.gpbContenuSaga = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cmdSupprimerSaga = new System.Windows.Forms.Button();
-            this.lstContenuSaga = new System.Windows.Forms.ListBox();
             this.gpbAjoutFilmSaga = new System.Windows.Forms.GroupBox();
             this.lstFilmAjoutable = new System.Windows.Forms.ListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cmdTransferer = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.txtFiltreFilm = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.gpbContenuSaga = new System.Windows.Forms.GroupBox();
+            this.lstContenuSaga = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gpbGestionSaga = new System.Windows.Forms.GroupBox();
+            this.cmdSupprimerSaga = new System.Windows.Forms.Button();
+            this.cmdCreerSaga = new System.Windows.Forms.Button();
+            this.txtNomNouvelleSaga = new System.Windows.Forms.TextBox();
+            this.lblNomNouvelleSaga = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lstSaga = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtFiltreSaga = new System.Windows.Forms.TextBox();
             this.pnlPrincipal.SuspendLayout();
+            this.gpbAjoutFilmSaga.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.gpbContenuSaga.SuspendLayout();
             this.gpbGestionSaga.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.gpbContenuSaga.SuspendLayout();
-            this.gpbAjoutFilmSaga.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,98 +105,6 @@
             this.pnlPrincipal.Size = new System.Drawing.Size(613, 466);
             this.pnlPrincipal.TabIndex = 4;
             // 
-            // gpbGestionSaga
-            // 
-            this.gpbGestionSaga.Controls.Add(this.cmdSupprimerSaga);
-            this.gpbGestionSaga.Controls.Add(this.cmdCreerSaga);
-            this.gpbGestionSaga.Controls.Add(this.txtNomNouvelleSaga);
-            this.gpbGestionSaga.Controls.Add(this.lblNomNouvelleSaga);
-            this.gpbGestionSaga.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gpbGestionSaga.Location = new System.Drawing.Point(246, 8);
-            this.gpbGestionSaga.Name = "gpbGestionSaga";
-            this.gpbGestionSaga.Padding = new System.Windows.Forms.Padding(8);
-            this.gpbGestionSaga.Size = new System.Drawing.Size(359, 79);
-            this.gpbGestionSaga.TabIndex = 5;
-            this.gpbGestionSaga.TabStop = false;
-            this.gpbGestionSaga.Text = "Gestion des sagas personnelles";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lstSaga);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(8, 8);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.panel1.Size = new System.Drawing.Size(238, 450);
-            this.panel1.TabIndex = 6;
-            // 
-            // lblNomNouvelleSaga
-            // 
-            this.lblNomNouvelleSaga.AutoSize = true;
-            this.lblNomNouvelleSaga.Location = new System.Drawing.Point(11, 21);
-            this.lblNomNouvelleSaga.Name = "lblNomNouvelleSaga";
-            this.lblNomNouvelleSaga.Size = new System.Drawing.Size(81, 13);
-            this.lblNomNouvelleSaga.TabIndex = 0;
-            this.lblNomNouvelleSaga.Text = "Nom de la saga";
-            // 
-            // txtNomNouvelleSaga
-            // 
-            this.txtNomNouvelleSaga.Location = new System.Drawing.Point(98, 18);
-            this.txtNomNouvelleSaga.Name = "txtNomNouvelleSaga";
-            this.txtNomNouvelleSaga.Size = new System.Drawing.Size(187, 20);
-            this.txtNomNouvelleSaga.TabIndex = 1;
-            // 
-            // cmdCreerSaga
-            // 
-            this.cmdCreerSaga.Location = new System.Drawing.Point(291, 16);
-            this.cmdCreerSaga.Name = "cmdCreerSaga";
-            this.cmdCreerSaga.Size = new System.Drawing.Size(55, 23);
-            this.cmdCreerSaga.TabIndex = 2;
-            this.cmdCreerSaga.Text = "Créer";
-            this.cmdCreerSaga.UseVisualStyleBackColor = true;
-            this.cmdCreerSaga.Click += new System.EventHandler(this.cmdCreerSaga_Click);
-            // 
-            // gpbContenuSaga
-            // 
-            this.gpbContenuSaga.Controls.Add(this.lstContenuSaga);
-            this.gpbContenuSaga.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gpbContenuSaga.Location = new System.Drawing.Point(246, 95);
-            this.gpbContenuSaga.Name = "gpbContenuSaga";
-            this.gpbContenuSaga.Padding = new System.Windows.Forms.Padding(8);
-            this.gpbContenuSaga.Size = new System.Drawing.Size(359, 131);
-            this.gpbContenuSaga.TabIndex = 7;
-            this.gpbContenuSaga.TabStop = false;
-            this.gpbContenuSaga.Text = "Contenu de la Saga";
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(246, 87);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(359, 8);
-            this.panel2.TabIndex = 8;
-            // 
-            // cmdSupprimerSaga
-            // 
-            this.cmdSupprimerSaga.Enabled = false;
-            this.cmdSupprimerSaga.Location = new System.Drawing.Point(247, 45);
-            this.cmdSupprimerSaga.Name = "cmdSupprimerSaga";
-            this.cmdSupprimerSaga.Size = new System.Drawing.Size(99, 23);
-            this.cmdSupprimerSaga.TabIndex = 3;
-            this.cmdSupprimerSaga.Text = "Supprimer";
-            this.cmdSupprimerSaga.UseVisualStyleBackColor = true;
-            this.cmdSupprimerSaga.Click += new System.EventHandler(this.cmdSupprimerSaga_Click);
-            // 
-            // lstContenuSaga
-            // 
-            this.lstContenuSaga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstContenuSaga.FormattingEnabled = true;
-            this.lstContenuSaga.Location = new System.Drawing.Point(8, 21);
-            this.lstContenuSaga.Name = "lstContenuSaga";
-            this.lstContenuSaga.Size = new System.Drawing.Size(343, 102);
-            this.lstContenuSaga.TabIndex = 0;
-            // 
             // gpbAjoutFilmSaga
             // 
             this.gpbAjoutFilmSaga.Controls.Add(this.lstFilmAjoutable);
@@ -220,23 +128,6 @@
             this.lstFilmAjoutable.Size = new System.Drawing.Size(343, 133);
             this.lstFilmAjoutable.TabIndex = 0;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(246, 226);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(359, 8);
-            this.panel3.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.txtFiltreFilm);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(8, 21);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(343, 31);
-            this.panel4.TabIndex = 11;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.cmdTransferer);
@@ -255,6 +146,16 @@
             this.cmdTransferer.TabIndex = 2;
             this.cmdTransferer.Text = "Transférer";
             this.cmdTransferer.UseVisualStyleBackColor = true;
+            this.cmdTransferer.Click += new System.EventHandler(this.cmdTransferer_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txtFiltreFilm);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(8, 21);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(343, 31);
+            this.panel4.TabIndex = 11;
             // 
             // txtFiltreFilm
             // 
@@ -264,6 +165,106 @@
             this.txtFiltreFilm.Size = new System.Drawing.Size(343, 20);
             this.txtFiltreFilm.TabIndex = 13;
             this.txtFiltreFilm.TextChanged += new System.EventHandler(this.txtFiltreFilm_TextChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(246, 226);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(359, 8);
+            this.panel3.TabIndex = 10;
+            // 
+            // gpbContenuSaga
+            // 
+            this.gpbContenuSaga.Controls.Add(this.lstContenuSaga);
+            this.gpbContenuSaga.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gpbContenuSaga.Location = new System.Drawing.Point(246, 95);
+            this.gpbContenuSaga.Name = "gpbContenuSaga";
+            this.gpbContenuSaga.Padding = new System.Windows.Forms.Padding(8);
+            this.gpbContenuSaga.Size = new System.Drawing.Size(359, 131);
+            this.gpbContenuSaga.TabIndex = 7;
+            this.gpbContenuSaga.TabStop = false;
+            this.gpbContenuSaga.Text = "Contenu de la Saga";
+            // 
+            // lstContenuSaga
+            // 
+            this.lstContenuSaga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstContenuSaga.FormattingEnabled = true;
+            this.lstContenuSaga.Location = new System.Drawing.Point(8, 21);
+            this.lstContenuSaga.Name = "lstContenuSaga";
+            this.lstContenuSaga.Size = new System.Drawing.Size(343, 102);
+            this.lstContenuSaga.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(246, 87);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(359, 8);
+            this.panel2.TabIndex = 8;
+            // 
+            // gpbGestionSaga
+            // 
+            this.gpbGestionSaga.Controls.Add(this.cmdSupprimerSaga);
+            this.gpbGestionSaga.Controls.Add(this.cmdCreerSaga);
+            this.gpbGestionSaga.Controls.Add(this.txtNomNouvelleSaga);
+            this.gpbGestionSaga.Controls.Add(this.lblNomNouvelleSaga);
+            this.gpbGestionSaga.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gpbGestionSaga.Location = new System.Drawing.Point(246, 8);
+            this.gpbGestionSaga.Name = "gpbGestionSaga";
+            this.gpbGestionSaga.Padding = new System.Windows.Forms.Padding(8);
+            this.gpbGestionSaga.Size = new System.Drawing.Size(359, 79);
+            this.gpbGestionSaga.TabIndex = 5;
+            this.gpbGestionSaga.TabStop = false;
+            this.gpbGestionSaga.Text = "Gestion des sagas personnelles";
+            // 
+            // cmdSupprimerSaga
+            // 
+            this.cmdSupprimerSaga.Enabled = false;
+            this.cmdSupprimerSaga.Location = new System.Drawing.Point(247, 45);
+            this.cmdSupprimerSaga.Name = "cmdSupprimerSaga";
+            this.cmdSupprimerSaga.Size = new System.Drawing.Size(99, 23);
+            this.cmdSupprimerSaga.TabIndex = 3;
+            this.cmdSupprimerSaga.Text = "Supprimer";
+            this.cmdSupprimerSaga.UseVisualStyleBackColor = true;
+            this.cmdSupprimerSaga.Click += new System.EventHandler(this.cmdSupprimerSaga_Click);
+            // 
+            // cmdCreerSaga
+            // 
+            this.cmdCreerSaga.Location = new System.Drawing.Point(291, 16);
+            this.cmdCreerSaga.Name = "cmdCreerSaga";
+            this.cmdCreerSaga.Size = new System.Drawing.Size(55, 23);
+            this.cmdCreerSaga.TabIndex = 2;
+            this.cmdCreerSaga.Text = "Créer";
+            this.cmdCreerSaga.UseVisualStyleBackColor = true;
+            this.cmdCreerSaga.Click += new System.EventHandler(this.cmdCreerSaga_Click);
+            // 
+            // txtNomNouvelleSaga
+            // 
+            this.txtNomNouvelleSaga.Location = new System.Drawing.Point(98, 18);
+            this.txtNomNouvelleSaga.Name = "txtNomNouvelleSaga";
+            this.txtNomNouvelleSaga.Size = new System.Drawing.Size(187, 20);
+            this.txtNomNouvelleSaga.TabIndex = 1;
+            // 
+            // lblNomNouvelleSaga
+            // 
+            this.lblNomNouvelleSaga.AutoSize = true;
+            this.lblNomNouvelleSaga.Location = new System.Drawing.Point(11, 21);
+            this.lblNomNouvelleSaga.Name = "lblNomNouvelleSaga";
+            this.lblNomNouvelleSaga.Size = new System.Drawing.Size(81, 13);
+            this.lblNomNouvelleSaga.TabIndex = 0;
+            this.lblNomNouvelleSaga.Text = "Nom de la saga";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lstSaga);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.panel1.Size = new System.Drawing.Size(238, 450);
+            this.panel1.TabIndex = 6;
             // 
             // lstSaga
             // 
@@ -310,14 +311,14 @@
             this.Text = "MyKodiSaga";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlPrincipal.ResumeLayout(false);
+            this.gpbAjoutFilmSaga.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.gpbContenuSaga.ResumeLayout(false);
             this.gpbGestionSaga.ResumeLayout(false);
             this.gpbGestionSaga.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.gpbContenuSaga.ResumeLayout(false);
-            this.gpbAjoutFilmSaga.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);

@@ -1,5 +1,6 @@
 ﻿using MyKodiSaga.DTO;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -93,28 +94,36 @@ namespace MyKodiSaga
                 return retour.OrderBy(s => s.Name).ToList();
             }
         }
-        public static List<Movie> ListFilm
+        public static List<Movie> ListFilm(Saga saga = null)
         {
-            get
+            List<Movie> retour = new List<Movie>();
+
+            using (MySqlCommand command = connection.CreateCommand())
             {
-                List<Movie> retour = new List<Movie>();
+                command.Parameters.Clear();
 
-                using (MySqlCommand command = connection.CreateCommand())
+                command.CommandText = "SELECT movie.idMovie, movie.idFile, movie.c00, movie.idSet, sets.strSet " +
+                                      "FROM movie " +
+                                          "LEFT JOIN sets ON sets.idSet = movie.idSet";
+
+                if (saga != null)
                 {
-                    command.CommandText = "SELECT DISTINCT idMovie, idFile, c00 " +
-                                          "FROM movie";
+                    command.CommandText += " WHERE movie.idSet = @idSet";
 
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            retour.Add(new Movie(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), -1));
-                        }
-                    }
+                    command.Parameters.Add(new MySqlParameter("idSet", saga.Id));
                 }
 
-                return retour.OrderBy(m => m.Name).ToList();
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        retour.Add(new Movie(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2),
+                                             reader.IsDBNull(3) ? -1 : reader.GetInt32(3), reader.IsDBNull(4) ? string.Empty : reader.GetString(4)));
+                    }
+                }
             }
+
+            return retour.OrderBy(m => m.Name).ToList();
         }
 
 
@@ -158,30 +167,27 @@ namespace MyKodiSaga
             }
         }
 
-
-        public static List<Movie> ListFilmSaga(Saga saga)
+        public static void CopyMovieInSaga(Movie movie, Saga destinationSaga)
         {
-            List<Movie> retour = new List<Movie>();
-
             using (MySqlCommand command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT idMovie, idFile, c00, idSet " +
-                                      "FROM movie " +
-                                      "WHERE idSet = @idSet";
-
                 command.Parameters.Clear();
-                command.Parameters.Add(new MySqlParameter("idSet", saga.Id));
 
-                using (MySqlDataReader reader = command.ExecuteReader())
+                command.CommandText = "SELECT REPLACE(REPLACE(GROUP_CONCAT(COLUMN_NAME), 'idMovie,', ''), 'idSet,', '') FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'movie' AND TABLE_SCHEMA = '" + connection.Database + "'";
+
+                string movieTableColumnsList = command.ExecuteScalar() as string;
+
+                if (!String.IsNullOrEmpty(movieTableColumnsList))
                 {
-                    while (reader.Read())
-                    {
-                        retour.Add(new Movie(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetInt32(3)));
-                    }
+                    command.Parameters.Clear();
+
+                    command.CommandText = "INSERT INTO movie (idSet," + movieTableColumnsList + ") SELECT " + destinationSaga.Id + "," + movieTableColumnsList + " FROM movie WHERE c00 = @name";
+
+                    command.Parameters.Add(new MySqlParameter("name", movie.Name));
+
+                    command.ExecuteNonQuery();
                 }
             }
-
-            return retour.OrderBy(m => m.Name).ToList();
         }
     }
 }

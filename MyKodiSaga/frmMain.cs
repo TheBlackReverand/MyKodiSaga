@@ -74,7 +74,7 @@ namespace MyKodiSaga
         {
             lstFilmAjoutable.Items.Clear();
 
-            foreach (Movie movie in MySql.ListFilm)
+            foreach (Movie movie in MySql.ListFilm())
             {
                 if (movie.Name.ToUpper().Contains(txtFiltreFilm.Text.ToUpper()))
                 {
@@ -107,7 +107,7 @@ namespace MyKodiSaga
             cmdSupprimerSaga.Enabled = ((Saga)lstSaga.SelectedItem).IsPersonnalSaga;
 
             lstContenuSaga.Items.Clear();
-            foreach (Movie movie in MySql.ListFilmSaga((Saga)lstSaga.SelectedItem))
+            foreach (Movie movie in MySql.ListFilm((Saga)lstSaga.SelectedItem))
             {
                 lstContenuSaga.Items.Add(movie);
             }
@@ -121,6 +121,14 @@ namespace MyKodiSaga
         private void txtFiltreFilm_TextChanged(object sender, EventArgs e)
         {
             RefreshListMovie();
+        }
+
+        private void cmdTransferer_Click(object sender, EventArgs e)
+        {
+            MySql.CopyMovieInSaga((Movie)lstFilmAjoutable.SelectedItem, (Saga)lstSaga.SelectedItem);
+
+            txtFiltreFilm_TextChanged(null, EventArgs.Empty);
+            lstSaga_SelectedValueChanged(null, EventArgs.Empty);
         }
     }
 }
